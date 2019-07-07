@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.post-list{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    grid-gap: 28px;
+}
+.post{
+    cursor: pointer;
+    position: relative;
+
+}
+.post-image{
+    /* El figure por defecto trae un margin */
+    margin: 0;
+}
+.post-image img{
+    width: 100%;
+    vertical-align: top;
+    display: block;
+}
+.post-overlay{
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+.post:hover .post-overlay{
+    display: flex;
+}
+.post-lke,
+.post-comments{
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px){
+    .post-list{
+        grid-gap: 3px
+    }
+}
